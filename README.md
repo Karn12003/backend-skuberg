@@ -1,309 +1,69 @@
-# Crypto Exchange API
+# Crypto Exchange System
 
-This is a simple cryptocurrency exchange API built with Node.js, Sequelize, and MySQL. The API allows users to create accounts, manage wallets, buy and sell cryptocurrencies, and track their transactions.
+โปรเจคนี้เป็นระบบการแลกเปลี่ยน Cryptocurrencies ที่สามารถทำการซื้อ-ขาย Bitcoin, Ethereum, XRP, Dogecoin โดยใช้เงิน Fiat (THB, USD) และสามารถทำการโอนเหรียญภายในระบบหรือนอกระบบได้
 
-## Prerequisites
+## ขั้นตอนการตั้งค่าโปรเจค
 
-Before running the project, you will need:
-
-- **Node.js**: Make sure you have Node.js installed. You can download it from [https://nodejs.org](https://nodejs.org).
-- **MySQL**: The project uses MySQL as a database. Install MySQL if you haven't already. You can download it from [https://www.mysql.com](https://www.mysql.com).
-- **MySQL Database**: Create a database for the project, such as `crypto-exchange`.
-
-- https://.postman.co/workspace/My-Workspace~667d1783-4c2f-4d49-8a27-1e9ad3986074/collection/41803463-091908c6-24b4-4078-a019-7f3cc5d7577b?action=share&creator=41803463
-
-## Installation
-
-1. **Clone the repository**:
-
+1. **โคลนโปรเจค**:
+   เปิด Terminal แล้วใช้คำสั่งนี้เพื่อโคลนโปรเจค:
    ```bash
    git clone git@github.com:Karn12003/backend-skuberg.git
    cd crypto-exchange-skuberg
-Install dependencies:
-
-Inside the project directory, run the following command to install all required dependencies:
+ติดตั้ง Dependencies: ใช้คำสั่งนี้เพื่อติดตั้ง dependencies ที่จำเป็น:
 
 bash
 Copy
 Edit
 npm install
-Set up the database:
+ตั้งค่าฐานข้อมูล MySQL:
 
-Create a MySQL database (e.g., crypto-exchange).
+สร้างฐานข้อมูล crypto-exchange ใน MySQL
 
-Update the connection details in models/index.js to match your MySQL database setup.
+แก้ไขไฟล์ models/index.js เพื่อเชื่อมต่อกับฐานข้อมูลของคุณ (กรณีที่มีการเปลี่ยนแปลง username, password, หรือชื่อฐานข้อมูล)
 
-Run Sequelize migrations:
-
-If you have set up Sequelize migrations, run the following command to sync the models with the database:
+ซิงค์ฐานข้อมูล: ก่อนที่จะรันโปรเจค, ให้ทำการซิงค์ฐานข้อมูลด้วยคำสั่ง:
 
 bash
 Copy
 Edit
-npm run sync
-If you haven't set up migrations, Sequelize will use sequelize.sync({ alter: true }) to create or update the tables based on your model definitions.
-
-Start the server:
-
-To start the API server, run:
+node app.js
+รันโปรเจค: หลังจากซิงค์ฐานข้อมูลเสร็จแล้ว, ใช้คำสั่งนี้เพื่อรันโปรเจค:
 
 bash
 Copy
 Edit
-npm start
-The server will be running on http://localhost:3000.
+node app.js
+เซิร์ฟเวอร์จะเริ่มทำงานที่ http://localhost:3000
 
-API Endpoints
-Here are some of the available API endpoints:
+การทดสอบ API
+สามารถทดสอบ API ที่คุณสร้างขึ้นได้ด้วยการใช้ Postman หรือ curl:
 
-Users
-POST /api/users: Create a new user.
-
-GET /api/users: Get all users.
-
-GET /api/users/:id: Get a user by ID.
-
-PUT /api/users/:id: Update a user's information.
-
-DELETE /api/users/:id: Delete a user.
-
-Wallets
-POST /api/wallets: Create a new wallet.
-
-GET /api/wallets/:userId: Get a wallet by user ID.
-
-Cryptocurrencies
-POST /api/cryptocurrencies: Create a new cryptocurrency.
-
-GET /api/cryptocurrencies: Get all cryptocurrencies.
-
-Transactions
-POST /api/transactions: Create a new transaction (buy or sell).
-
-POST /api/cryptocurrencies/buy: Buy cryptocurrency.
-
-POST /api/cryptocurrencies/sell: Sell cryptocurrency.
-
-Testing
-To test the API, you can use tools like Postman or Insomnia to send requests to the server.
-
-Example API Request
-To create a user, send a POST request to /api/users with the following JSON body:
-
-json
-Copy
-Edit
-{
-  "username": "john_doe",
-  "email": "john@example.com",
-  "password": "password123"
-}
-Conclusion
-This project is a basic implementation of a cryptocurrency exchange API. You can use it as a foundation for building more advanced features such as real-time trading, integrating with third-party cryptocurrency prices, or implementing security features like JWT authentication.
-
-Feel free to modify or extend the project as needed!
-
-markdown
-Copy
-Edit
-
-### คำอธิบายของแต่ละส่วน:
-1. **Prerequisites**: ข้อกำหนดในการติดตั้งเช่น Node.js และ MySQL
-2. **Installation**: วิธีการติดตั้งและรันโปรเจค
-3. **API Endpoints**: รายละเอียดของ API ที่คุณสร้างขึ้น เช่น การสร้างผู้ใช้, การซื้อ/ขาย cryptocurrency
-4. **Testing**: วิธีทดสอบ API ด้วยเครื่องมือเช่น Postman หรือ Insomnia
-5. **Conclusion**: สรุปของโปรเจค
-
-คุณสามารถปรับให้เหมาะสมกับโปรเจคของคุณเองได้เช่นกันค่ะ!
-
-
-
-
-
-You said:
-รวมมาเลย
-
-
-ChatGPT said:
-แน่นอนค่ะ นี่คือตัวอย่าง README.md สำหรับโปรเจคของคุณ:
-
-markdown
-Copy
-Edit
-# Crypto Exchange API
-
-This is a simple cryptocurrency exchange API built with Node.js, Sequelize, and MySQL. The API allows users to create accounts, manage wallets, buy and sell cryptocurrencies, and track their transactions.
-
-## Prerequisites
-
-Before running the project, you will need:
-
-- **Node.js**: Make sure you have Node.js installed. You can download it from [https://nodejs.org](https://nodejs.org).
-- **MySQL**: The project uses MySQL as a database. Install MySQL if you haven't already. You can download it from [https://www.mysql.com](https://www.mysql.com).
-- **MySQL Database**: Create a database for the project, such as `crypto-exchange`.
-
-## Installation
-
-1. **Clone the repository**:
-
-   ```bash
-   git clone https://your-repository-url.git
-   cd crypto-exchange-skuberg
-Install dependencies:
-
-Inside the project directory, run the following command to install all required dependencies:
+ตัวอย่างการใช้งาน API:
+สร้างผู้ใช้งาน:
 
 bash
 Copy
 Edit
-npm install
-Set up the database:
-
-Create a MySQL database (e.g., crypto-exchange).
-
-Update the connection details in models/index.js to match your MySQL database setup.
-
-Run Sequelize migrations:
-
-If you have set up Sequelize migrations, run the following command to sync the models with the database:
+curl -X POST http://localhost:3000/api/users -H "Content-Type: application/json" -d '{"username": "john", "email": "john@example.com", "password": "1234"}'
+ดึงข้อมูลผู้ใช้งานทั้งหมด:
 
 bash
 Copy
 Edit
-npm run sync
-If you haven't set up migrations, Sequelize will use sequelize.sync({ alter: true }) to create or update the tables based on your model definitions.
+curl http://localhost:3000/api/users
+ความสามารถของระบบ
+การสร้างผู้ใช้งาน
 
-Start the server:
+การสร้าง Wallet
 
-To start the API server, run:
+การสร้างและจัดการ Cryptocurrencies
 
-bash
-Copy
-Edit
-npm start
-The server will be running on http://localhost:3000.
+การทำธุรกรรมซื้อ/ขาย Cryptocurrencies
 
-API Endpoints
-Here are some of the available API endpoints:
+การตรวจสอบข้อมูลผู้ใช้งาน, Wallet และ Transactions
 
-Users
-POST /api/users: Create a new user.
+ข้อควรระวัง
+โปรดตรวจสอบให้แน่ใจว่า MySQL เซิร์ฟเวอร์ของคุณทำงานอยู่และเชื่อมต่อกับโปรเจคได้สำเร็จ
 
-Request Body:
-
-json
-Copy
-Edit
-{
-  "username": "john_doe",
-  "email": "john@example.com",
-  "password": "password123"
-}
-GET /api/users: Get all users.
-
-GET /api/users/:id: Get a user by ID.
-
-PUT /api/users/:id: Update a user's information.
-
-DELETE /api/users/:id: Delete a user.
-
-Wallets
-POST /api/wallets: Create a new wallet.
-
-Request Body:
-
-json
-Copy
-Edit
-{
-  "userId": 1,
-  "balance": 1000
-}
-GET /api/wallets/:userId: Get a wallet by user ID.
-
-Cryptocurrencies
-POST /api/cryptocurrencies: Create a new cryptocurrency.
-
-Request Body:
-
-json
-Copy
-Edit
-{
-  "name": "Bitcoin",
-  "symbol": "BTC"
-}
-GET /api/cryptocurrencies: Get all cryptocurrencies.
-
-Transactions
-POST /api/transactions: Create a new transaction (buy or sell).
-
-Request Body:
-
-json
-Copy
-Edit
-{
-  "userId": 1,
-  "cryptocurrencyId": 1,
-  "amount": 0.5,
-  "type": "BUY",
-  "status": "COMPLETED"
-}
-POST /api/cryptocurrencies/buy: Buy cryptocurrency.
-
-Request Body:
-
-json
-Copy
-Edit
-{
-  "userId": 1,
-  "cryptocurrencyId": 1,
-  "amount": 0.5,
-  "fiatCurrency": "USD",
-  "paymentMethod": "credit_card"
-}
-POST /api/cryptocurrencies/sell: Sell cryptocurrency.
-
-Request Body:
-
-json
-Copy
-Edit
-{
-  "userId": 1,
-  "cryptocurrencyId": 1,
-  "amount": 0.5,
-  "fiatCurrency": "USD",
-  "paymentMethod": "bank_transfer"
-}
-Testing
-To test the API, you can use tools like Postman or Insomnia to send requests to the server.
-
-Example API Request
-To create a user, send a POST request to /api/users with the following JSON body:
-
-json
-Copy
-Edit
-{
-  "username": "john_doe",
-  "email": "john@example.com",
-  "password": "password123"
-}
-Example Response
-json
-Copy
-Edit
-{
-  "id": 1,
-  "username": "john_doe",
-  "email": "john@example.com",
-  "password": "password123",
-  "createdAt": "2025-04-23T10:00:00.000Z",
-  "updatedAt": "2025-04-23T10:00:00.000Z"
-}
-Conclusion
-This project is a basic implementation of a cryptocurrency exchange API. You can use it as a foundation for building more advanced features such as real-time trading, integrating with third-party cryptocurrency prices, or implementing security features like JWT authentication.
+ในการทดสอบ API ซื้อ/ขาย cryptocurrency, คุณต้องแน่ใจว่าผู้ใช้งานมีเงินใน Wallet เพียงพอ
 
