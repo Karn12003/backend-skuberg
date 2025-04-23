@@ -17,7 +17,7 @@ Before running the project, you will need:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://your-repository-url.git
+   git clone git@github.com:Karn12003/backend-skuberg.git
    cd crypto-exchange-skuberg
 Install dependencies:
 
