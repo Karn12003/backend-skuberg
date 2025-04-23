@@ -10,6 +10,8 @@ Before running the project, you will need:
 - **MySQL**: The project uses MySQL as a database. Install MySQL if you haven't already. You can download it from [https://www.mysql.com](https://www.mysql.com).
 - **MySQL Database**: Create a database for the project, such as `crypto-exchange`.
 
+- https://.postman.co/workspace/My-Workspace~667d1783-4c2f-4d49-8a27-1e9ad3986074/collection/41803463-091908c6-24b4-4078-a019-7f3cc5d7577b?action=share&creator=41803463
+
 ## Installation
 
 1. **Clone the repository**:
